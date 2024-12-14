@@ -68,6 +68,9 @@ RUN ./configure \
     make && \
     make install
 
+# Ensure directories exist
+RUN mkdir -p /usr/lib/nginx/modules /var/cache/nginx
+
 # Create a minimal runtime image for Nginx
 FROM debian:bullseye-slim
 
