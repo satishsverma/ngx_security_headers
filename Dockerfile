@@ -86,6 +86,7 @@ COPY --from=builder /usr/sbin/nginx /usr/sbin/nginx
 COPY --from=builder /etc/nginx /etc/nginx
 COPY --from=builder /usr/lib/nginx /usr/lib/nginx
 COPY --from=builder /var/cache/nginx /var/cache/nginx
+COPY --from=builder /usr/src/ngx_security_headers /usr/src/ngx_security_headers
 
 # Expose HTTP and HTTPS ports
 EXPOSE 80 443

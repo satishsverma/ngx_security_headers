@@ -1,0 +1,12 @@
+services:
+  nginx:
+    image: satishsverma/nginx-ngx-security-headers:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./html:/usr/share/nginx/html
+      - ./logs:/var/log/nginx
+    # restart: always
